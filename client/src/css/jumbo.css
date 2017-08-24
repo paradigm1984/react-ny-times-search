@@ -1,0 +1,19 @@
+.jumbo-header {
+	font-size: 4em;
+	text-align: center;
+}
+
+.jumbo-body {
+	font-size: 1.6em;
+	text-align: center;
+}
+
+.article-button {
+	background-color: red;
+	color: white;
+	padding: 1%;
+	border-radius: 8px;
+	font-size: 1.6em;
+	text-decoration: none;
+	font-family: 'Playfair Display', serif;
+}

@@ -1,0 +1,37 @@
+.panel-container {
+	width: 100%;
+}
+
+.panel {
+	height: 99%;
+	display: inline-block;
+	background-color: white;
+	width: 48%;
+	padding: 0;
+	margin: 2% 1% 2% 1%;
+	border-radius: 5px;
+	box-shadow: 4px 5px 5px 4px #f2f2f2;
+}
+
+.panel-header {
+	text-align: center;
+	color: black;
+	font-weight: 100;
+	stroke: 3px;
+}
+
+.panel-body {
+	text-align: center;
+	color: black;
+}
+
+@media (max-width: 745px)  {
+	
+	.panel {
+		display: block;
+		padding: 1%;
+		margin: 2% 5% 2% 5%;
+		width: 88%;
+
+	}
+}
