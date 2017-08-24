@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
 import './css/jumbo.css';
 
+
 class Jumbo extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state={isShowingPosts: false};
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    // this would make it toggle from the false and true options for isShowingPosts
+    this.setState(prevState => ({
+      isShowingPosts: !prevState.isShowingPosts
+    }));
+    console.log("event was triggered");
+    // got the click to work, now just have to pass the state to the body1 component
+    // click no longer working
+  }
+
 
 
   render() {
