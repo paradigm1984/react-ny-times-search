@@ -10,7 +10,7 @@ const helpers = {
 	test: ()=>{
 		console.log("hello from test!!!");
 		// will return the route for the scrape
-		return axios.get("http://localhost:3000/test/route", {
+		return axios.get("http://localhost:4000/test/route.", {
 		}).then(res=>{
 			return res;
 		}).catch(err => {
@@ -18,17 +18,24 @@ const helpers = {
         });
 	},
 
-	scrapePosts: ()=>{
-
-		// the actual javascript will happen in the helpers.js file
-		// youll get the res of that and send it wherever.
-		// you will use req.body with body parser here
-
-		console.log("scrape posts");
-		// will return the route for the scrape
-		return axios.get("http://localhost:3000/scrape/", {
-
-		}).then(res=>{
+	getArticles: (result)=>{
+		// the actual javascript for the scrape will happen in the server.js file
+		// youll get the result of that here
+		console.log(result);
+		console.log("NY times API call");
+		return axios.get("http://localhost:4000/nyTimes/", {
+			// should be the results of the scrape that happened
+			// in server.js 8.24.17 2:31pm
+			/*
+			image: result.image,
+			threadID: result.threadID,
+			link: result.link,
+			time: result.time,
+			summary: result.summary,
+			comments: result.comments
+			*/
+		})
+		.then(res=>{
 			return res;
         }).catch(err => {
             return err;
@@ -38,3 +45,5 @@ const helpers = {
 }
 
 module.exports = helpers;
+
+

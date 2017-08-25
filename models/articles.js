@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create article schema
-const PostSchema = new Schema({
+const ArticleSchema = new Schema({
   // title is a non required string because i wasnt able to take out the empty objects when scraping
   title: {
     type: String,
@@ -19,9 +19,9 @@ const PostSchema = new Schema({
     type: String,
     required: false
   },
-  createdAt: {
-    type: Date, 
-    default: Date.now
+  pubDate: {
+    type: String, 
+    required: false
   },
   // This only saves one note's ObjectId, ref refers to the Note model
   comments:[{
@@ -30,8 +30,8 @@ const PostSchema = new Schema({
   }]
 });
 
-// Create the Post model with the PostSchema
-const Post = mongoose.model("Post", PostSchema);
+// Create the Article model with the ArticleSchema
+const Article = mongoose.model("Article", ArticleSchema);
 
 // Export the model
-module.exports = Post;
+module.exports = Article;
