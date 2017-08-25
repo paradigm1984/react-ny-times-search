@@ -57,20 +57,7 @@ app.get("/nyTimes/", function(req, res) {
 	
 	  responseObject = body.response.docs
 	  console.log("responseObject: ", responseObject);
-	  /*
-	  responseObject.map(function(value, index){
-	  		Article.create({
-	  			title:"value.main.headline",
-	  			link:"value.web_url",
-	  			summary:"value.snippet",
-	  			pubDate:"value.pub_date"
-	  		}).then(function(err,data){
-	  			if(err) throw err;
-	  			console.log(data)
-	  		})
-
-	  });
-	  */
+	 
 	  for (var i = 0; i < responseObject.length; i++) {
 
 	  	result = {};

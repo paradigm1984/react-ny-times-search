@@ -19,8 +19,20 @@ const helpers = {
 	},
 
 	getArticles: (result)=>{
-		// the actual javascript for the scrape will happen in the server.js file
-		// youll get the result of that here
+		 
+		/* UPDATE: 8.24.17 11:14pm
+		the request to ny times should not go in the server.js
+		file. after talking with keith he explained how you should
+		grab the request data from ny times and render it on the dom
+		only when the user saves it should it go and get saved to the
+		database, so it should only get sent to the backend for that then.
+		when its sent on the front end they should be in the state, and 
+		the state should be an array of all of them. maybe the fact that
+		theyre all bundled in an object could come in handy. 
+		*/
+
+		
+
 		console.log(result);
 		console.log("NY times API call");
 		return axios.get("http://localhost:4000/nyTimes/", {
