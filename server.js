@@ -41,58 +41,13 @@ app.get("/test/route/", function(req, res) {
 // getPosts function in helpers.js. on same server as react which is why you need localhost:3000
 // FOR CLASS: got the route to work, errors on the request. 
 
-// API KEY: 393209746f6348e4a147d90f49088806
+
 // UPDATE 8.24.17 2:06pm its no longer getting an error code, but results is underfined
 app.get("/nyTimes/", function(req, res) {
-	console.log("about to make the request...");
-
-	request.get({
-	  url: "https://api.nytimes.com/svc/search/v2/articlesearch.json",
-	  qs: {
-	    'api-key': "393209746f6348e4a147d90f49088806",
-	    'sort': "newest"
-	  },
-	}, function(err, response, body) {
-	  body = JSON.parse(body);
-	
-	  responseObject = body.response.docs
-	  console.log("responseObject: ", responseObject);
-	 
-	  for (var i = 0; i < responseObject.length; i++) {
-
-	  	result = {};
-
-	  	console.log("////////////////////////////");
-
-	  	console.log("headline: ", responseObject[i].headline.main);
-	  	result.title = responseObject[i].headline.main;
-
-	  	console.log("url: ", responseObject[i].web_url);
-	  	result.link = responseObject[i].web_url;
-
-	  	console.log("snippet: ", responseObject[i].snippet);
-	  	result.summary = responseObject[i].snippet;
-
-	  	console.log("publish date: ", responseObject[i].pub_date);
-	  	result.pubDate = responseObject[i].pub_date;
-
-	  	console.log("////////////////////////////");
-
-	  	Article.create({
-	  		title: result.title,
-	  		link: result.link,
-	  		summary: result.summary,
-	  		pubDate: result.pubDate
-	  	}).then(function(err, result) {
-	  		if(err) throw err;
-
-	  		console.log(data);
-	  	})
-	// the nyTimesArticle shows up in the dbs which means theres data in it!!1
-	  }
-	})
-
-}); // END app.get = "http://localhost:3000/scrape/"
+// dont need to get a response back here, because were not saving
+// anything to the db until 
+console.log(req);
+}); // END get /nyTimes/
 
 
 
