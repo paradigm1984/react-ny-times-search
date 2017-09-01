@@ -46,9 +46,9 @@ const helpers = {
 		  const resultArray = result.data.response.docs;
 
 		  return resultArray;
+		  console.log(resultArray);
 
-		  // before the for each statement you need to create the div to put each in, or maybe
-		  // you want to do it in the for each because you already have a body for it in the dom.
+		  
 		  // for (var i = 0; i < resultArray.length; i++) {
 		  // 	console.log('//\n// BEGIN ARTICLE ' + i + '\n//');
 		  // 	const title = resultArray[i].headline.main;
